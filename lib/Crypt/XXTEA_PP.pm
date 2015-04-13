@@ -58,7 +58,7 @@ my $MIN_ELEMENTS_IN_BLOCK = $MIN_BLOCK_SIZE / $FACTOR;
 
 =method keysize
 
-Returns the maximum XTEA key size, 16 bytes.
+Returns the maximum XXTEA key size, 16 bytes.
 
 =cut
 
@@ -66,7 +66,7 @@ use constant keysize => $KEY_SIZE;
 
 =method blocksize
 
-Returns the XTEA block size, which is 8 bytes. This function exists so that Crypt::XTEA_PP can work with Crypt::CBC.
+Returns the XXTEA block size, which is 8 bytes. This function exists so that Crypt::XXTEA_PP can work with Crypt::CBC.
 
 =cut
 

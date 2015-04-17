@@ -122,7 +122,7 @@ sub encrypt {
 
 =method decrypt
 
-    $plain_text = $xtea->decrypt($cipher_text);
+    $plain_text = $xxtea->decrypt($cipher_text);
 
 Decrypts blocksize() bytes of $cipher_text and returns the corresponding plaintext.
 
@@ -218,6 +218,8 @@ sub key_setup {
 =head1 SEE ALSO
 
 L<Crypt::CBC>
+
+L<Crypt::XXTEA_XS>
 
 =cut
 

@@ -145,7 +145,8 @@ sub encrypt_block {
     my $block_ref = shift;
     my $key_ref = $self->{key};
 
-     croak( sprintf( 'block must has at least %d elements', $MIN_ELEMENTS_IN_BLOCK ) ) if scalar( @{ $block_ref } ) < $MIN_ELEMENTS_IN_BLOCK;
+    croak( sprintf( 'block must has at least %d elements', $MIN_ELEMENTS_IN_BLOCK ) ) if scalar( @{ $block_ref } ) < $MIN_ELEMENTS_IN_BLOCK;
+    croak( sprintf( 'key must has %d elements', $ELEMENTS_IN_KEY ) ) if scalar( @{ $key_ref } ) != $ELEMENTS_IN_KEY;
 
     my @block = map { $_ & 0xffff_ffff } @{ $block_ref };
     my @key = map { $_ & 0xffff_ffff } @{ $key_ref };
@@ -176,7 +177,8 @@ sub decrypt_block {
     my $block_ref = shift;
     my $key_ref = $self->{key};
 
-     croak( sprintf( 'block must has at least %d elements', $MIN_ELEMENTS_IN_BLOCK ) ) if scalar( @{ $block_ref } ) < $MIN_ELEMENTS_IN_BLOCK;
+    croak( sprintf( 'block must has at least %d elements', $MIN_ELEMENTS_IN_BLOCK ) ) if scalar( @{ $block_ref } ) < $MIN_ELEMENTS_IN_BLOCK;
+    croak( sprintf( 'key must has %d elements', $ELEMENTS_IN_KEY ) ) if scalar( @{ $key_ref } ) != $ELEMENTS_IN_KEY;
 
     my @block = map { $_ & 0xffff_ffff } @{ $block_ref };
     my @key = map { $_ & 0xffff_ffff } @{ $key_ref };
